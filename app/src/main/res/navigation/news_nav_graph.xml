@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/breakingNewsFragment">
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.shubham.newsapplication.ui.fragments.ArticleFragment"
+        android:label="ArticleFragment" />
+    <fragment
+        android:id="@+id/savedNewsFragment"
+        android:name="com.shubham.newsapplication.ui.fragments.SavedNewsFragment"
+        android:label="SavedNewsFragment" >
+        <action
+            android:id="@+id/action_savedNewsFragment_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchNewsFragment"
+        android:name="com.shubham.newsapplication.ui.fragments.SearchNewsFragment"
+        android:label="SearchNewsFragment" >
+        <action
+            android:id="@+id/action_searchNewsFragment_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakingNewsFragment"
+        android:name="com.shubham.newsapplication.ui.fragments.BreakingNewsFragment"
+        android:label="fragment_breaking_news"
+        tools:layout="@layout/fragment_breaking_news" >
+        <action
+            android:id="@+id/action_breakingNewsFragment2_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+    </fragment>
+</navigation>
