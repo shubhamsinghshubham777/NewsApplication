@@ -1,6 +1,6 @@
 package com.shubham.newsapplication.api
 
-import com.shubham.newsapplication.NewsResponse
+import com.shubham.newsapplication.models.NewsResponse
 import com.shubham.newsapplication.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET

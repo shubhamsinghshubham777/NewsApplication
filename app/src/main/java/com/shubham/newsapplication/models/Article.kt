@@ -1,4 +1,4 @@
-package com.shubham.newsapplication
+package com.shubham.newsapplication.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

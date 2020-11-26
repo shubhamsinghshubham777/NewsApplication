@@ -1,4 +1,4 @@
-package com.shubham.newsapplication
+package com.shubham.newsapplication.models
 
 data class Source(
     val id: Any,
