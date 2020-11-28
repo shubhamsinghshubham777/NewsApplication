@@ -48,14 +48,32 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
             )
         }
 
+
+        cancelIcon.setOnClickListener {
+            etSearch.text = null
+        }
+
+        cancelIcon.visibility = View.INVISIBLE //Cancel icon invisible by default
+
+        //TextChangedListener to display cancel icon if the editText is EMPTY
+        etSearch.addTextChangedListener {
+            if (it.toString().isNotEmpty()) {
+                cancelIcon.visibility = View.VISIBLE
+            } else {
+                cancelIcon.visibility = View.INVISIBLE
+            }
+        }
+
         var job: Job? = null
         etSearch.addTextChangedListener { editable ->
             job?.cancel()
             job = MainScope().launch {
                 delay(SEARCH_NEWS_TIME_DELAY)
                 editable?.let {
+
                     if (editable.toString().isNotEmpty()) {
                         viewModel.searchNews(editable.toString())
+
                     }
                 }
 
